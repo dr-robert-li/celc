@@ -18,14 +18,106 @@ Chat is a different kind of interface, because what it asks of the user is somet
 
 Strip the how out and what remains is the what, made available: data, and the capabilities to act on it, exposed through an API, an MCP server, an agent-to-agent protocol or direct access to the data layer. In effect, a store and a pipeline over it, with the rendering done at the other end, in whichever harness and model the user happens to be working through. The screen moves to the far end of the wire.
 
+From there it is tempting to take one more step, and I took it myself when I first wrote this argument down: users will stop caring about the vendor's interface and its brand, and will care only whether the store holds the data they want, in the structure they want, reachable the way they want. That is half right. The half that is wrong is where the money is.
+
+Defaults hold. The best-known demonstration of why concerns organ donation, which I offer as an illustration, not as evidence about software. Johnson and Goldstein found effective consent to donation of 4.25% to 27.5% in European countries where citizens had to opt in, against 85.9% to 99.98% where they had to opt out (Johnson and Goldstein, 2003, p.1338). In their online experiment, where respondents "could at a mouse click change their choice", the "Revealed donation rates were about twice as high when opting-out as when opting-in": 82% consented when donation was the default, 42% when it was not, and 79% when there was no default and they simply had to choose (p.1338). They give three reasons a default sticks. People may believe "that defaults are suggestions by the policy-maker, which imply a recommended action". Deciding takes effort, "whereas accepting the default is effortless". And the default is the status quo, the reference point against which any change is judged, and since "losses loom larger than the equivalent gains", leaving it feels like a loss (p.1338). None of the three is about organs. Each applies to any configuration that somebody else has chosen for you.
+
+In software the effect is no illustration, and it has been priced at the scale harness vendors work at. In the United States' search case against Google, the District Court for the District of Columbia accepted the plaintiffs' expert's evidence that "defaults have a powerful impact on consumer decisions" (*United States v Google LLC*, 2024, p.30). It found that "In 2021, Google paid out a total of $26.3 billion in revenue share under these contracts", the contracts that bought those placements (p.105), and concluded that "All of this makes the defaults extremely valuable" (p.232). Nobody pays $26.3 billion in a single year for something its users are about to stop caring about. And at the remedies stage the same court declined to bar Google "from making payments or offering other consideration to distribution partners for preloading or placement" of its products (*United States v Google LLC*, 2025, p.8), so paying for the default is still allowed, which every user and operator should be keenly aware of.
+
+Defaults hold often, though, not always, and both sources say where the hold gives out. The court found that "defaults are less effective when the alternative has strong brand recognition and product quality" (*United States v Google LLC*, 2024, p.212). Johnson and Goldstein's own data show the same limit from another side. The default all but decided who registered: across their countries "nearly 60 percentage points separate the two groups" (Johnson and Goldstein, 2003, p.1339). What finally happened moved far less. Where donation was the default they estimated "a 16.3% (P < 0.02) increase in donation", because families object, doctors hesitate and donors fail to match recipients, whatever the register says (p.1339). A default governs what people sign up to much more than what they end up with. That is a real limit. It is also no comfort to anyone who does not own the default, because often is enough to be worth a great deal to whoever sets it.
+
+In the arrangement I described above, the default is set by the harness: the client in which a person meets the model, and which decides, before they have decided anything, which model answers, which tools are to hand and how an answer is laid out. ChatGPT and Claude Desktop are harnesses in this sense, and both are highly opinionated ones. Each is a coherent product with its own view of how a conversation with a model should go, and a meaningful number of the people who use them will take that view as it comes. So the user interface has not left software. It has moved from the vendor of the data to the vendor of the harness, where it now frames every service the user reaches, and that is a material advantage to the harness vendor.
+
+Users do stop caring about the data vendor's UX, then. They stop because the harness's UX has replaced it. The lowest-common-denominator opinion that every vendor used to ship in its own screens is still being shipped; far fewer people are shipping it.
+
+What the harness vendor usually does not own matters just as much. The data, for the most part, belongs to someone else. So do the intermediary capabilities that expose it: the MCP and API servers in front of a store, and the agents a harness reaches over agent-to-agent protocols. The hardware, usually, is someone else's again. The harness owns very little of the what. What it owns is the conversation.
+
+That is an intermediary's position, and we have seen one like it before. A search engine stood between people and the sources they were looking for, ranked those sources and sent the user on to them. The default harness stands in the same place and sends nobody anywhere. It takes the question, goes to the services on the user's behalf and answers in its own voice, so the user may never see a source's own interface at all. It owns the interaction from end to end. The best word I have for that role is interlocutor: the party you are actually talking to, whoever it has been talking to on your behalf. A historical materialist will recognise the structure, and "control of the means of interaction" is a fair name for what the default harness holds.
+
+Actor-network theory has a more exact term, and since the essay needs it later, this is the place to introduce it. Michel Callon showed how an actor that defines a problem in its own terms makes itself "an obligatory passage point" for everyone else the problem involves: the point they all have to go through to get what they want (Callon, 1986). The default harness is an obligatory passage point in that plain sense. It sits between the operator or user and the whole range of services behind it, the data and capabilities reached through MCP and API servers and the agents reached over agent-to-agent protocols, and every one of those services is met through it. I will come back to obligatory passage points later, where they bear on how context itself is formed. For now it is enough to see who is standing in one.
+
+So the value the screen used to hold does not vanish. It concentrates in a few harnesses, while the data and the capabilities, which is to say most of what used to be the product, stay with whoever owns them. For anyone who does not own a harness, software devolves into backend, middleware and integration: the store, the pipeline over it, and the work of making both reachable through somebody else's passage point. The user still cares whether the store holds the data they want, in the structure they want, reachable the way they want. They express that care through an interface the data vendor no longer controls.
+
+That is my working answer to the opening question, and it is not the received view. So I owe the promise I made at the start: who holds the received view, and in what words. The field already has a crowded vocabulary for this shift, and it helps to sort the terms by what each one names: a process, an artefact or a practice.
+
+The process names treat the change as a new lifecycle. AWS calls its version the AI-Driven Development Life Cycle, or AI-DLC (AWS, 2025). "Agentic SDLC" circulates widely with no single author. ADLC is used for two different things, a lifecycle for building agents and a lifecycle in which agents do the building, which is reason enough not to lean on it.
+
+The artefact names say that the thing being made has changed. Karpathy's Software 2.0 and Software 3.0, which I quoted at the start, belong here. So does the academic version, SE 3.0, which proposed "intent-first, conversation-oriented development" with "AI teammates" in October 2024, ahead of the vendor wave of 2025 (Hassan et al., 2024). So does GitHub's Spec Kit, whose launch post describes a shift from "code is the source of truth" to "intent is the source of truth" (Delimarsky, 2025).
+
+The practice names describe what a person now does. Karpathy named "vibe coding" in February 2025, a way of working in which "you fully give in to the vibes, embrace exponentials, and forget that the code even exists" (Karpathy, 2025b), and a year later gave his "current favorite" name for what came after it: "agentic engineering" (Karpathy, 2026). Between the two came "context engineering". Tobi Lütke preferred it to prompt engineering because "It describes the core skill better: the art of providing all the context for the task to be plausibly solvable by the LLM" (Lütke, 2025), and Karpathy, within the week, called it "the delicate art and science of filling the context window with just the right information for the next step" (Karpathy, 2025c).
+
+Names are half of it. The other half is how much each camp thinks has changed, and the opinions run along a spectrum.
+
+At one end is augmentation: the SDLC as it was, with assistive tools bolted on. Its canonical evidence is the controlled experiment on GitHub Copilot in which developers "completed the task significantly faster–55% faster" (Peng et al., 2023). It was one task, writing an HTTP server in JavaScript, done by 95 developers. The result is real, and it is a measurement of one phase of a process that nobody proposed to change.
+
+Next comes compression and reordering: the same phases, run faster, merged or re-sequenced. AWS rejects augmentation in so many words, warning that "Simply retrofitting AI as an assistant not only constrains its capabilities but also reinforces outdated inefficiencies", and announces that "Traditional 'sprints' are replaced by 'bolts' – shorter, more intense work cycles" (AWS, 2025). Yet the AI-DLC keeps its phases, Inception, Construction and Operations, and its AI "implements solutions only after receiving human validation". It calls itself transformative and is, structurally, a compression. Boris Tane sits at the far edge of this position, because for him collapse is not speed-up: "The stages collapsed. They didn't get faster. They merged." What is left is a loop, "Intent. Build. Observe. Repeat." (Tane, 2026). AWS's Kiro reorders rather than removes, pairing "the flow of vibe coding" with "the clarity of specs" and running requirements, then design, then tasks (Swaminathan and Singh, 2025). The 2025 DORA report gives the position its empirical form: "AI doesn't fix a team; it amplifies what's already there" (Harvey and DeBellis, 2025).
+
+Then transformation: a new paradigm, in which the artefact, the unit of work or the roles change. Software 3.0 is the clearest statement of it, SE 3.0 the academic one and Spec Kit's "intent is the source of truth" the vendor one. Patrick Debois puts it as plainly as anyone: "The object moving through the pipeline isn't code. It's knowledge and intent." (Debois, 2026). Anthropic's own data points the same way, with "79% of conversations on Claude Code were identified as 'automation'", against 49% on Claude.ai, and its authors speculate that developers "will shift to mostly managing and guiding these systems, rather than writing code themselves" (Anthropic, 2025). That last is speculation, and the source says so.
+
+Against all three stand the sceptics, and theirs is the most uncomfortable data in the field. METR's 2025 study found experienced open-source developers 19% slower with AI tools (METR, 2025). In February 2026 METR labelled that result "out of date", reported a new estimate of an 18% speed-up (CI −38% to +9%), and called the new figure "an unreliable signal" (METR, 2026). The 2024 DORA report found that "As AI adoption increased, it was accompanied by an estimated decrease in delivery throughput by 1.5%, and an estimated reduction in delivery stability by 7.2%" (DORA, 2024): correlational survey estimates, per 25% increase in adoption. By 2025 the throughput relationship had turned positive, but "AI adoption does continue to have a negative relationship with software delivery stability", and with 90% of respondents using AI, "30% report little or no trust in the code generated by AI" (Harvey and DeBellis, 2025). GitClear, a vendor, so read it with that in mind, reports from 211 million changed lines a "4x Growth in Code Clones", with cloned lines rising "from 8.3% to 12.3%" between 2021 and 2024 and moved lines, the trace of refactoring, falling "from 25% of changed lines in 2021, to less than 10% in 2024" (GitClear, 2025).
+
+A fifth reading treats all of this as one more abstraction layer, the next step after assembler, high-level languages and frameworks. Martin Fowler accepts the scale of the change, putting it at "a similar degree as the change from assembler" to high-level languages, and then refuses the comfort of the analogy by quoting Birgitta Böckeler: "we're moving *sideways* into non-determinism at the same time" (Böckeler, quoted in Fowler, 2025). Fortran kept in version control compiles to the same behaviour every time. A prompt kept in version control does not reliably reproduce it.
+
+A sixth reading is about labour. The Stanford Digital Economy Lab finds that "employment of young workers (ages 22–25) in AI-exposed occupations now stands 19% below where it would be had it kept pace with that of their less-exposed peers", working "primarily through reduced hiring", and calls its own results "early, descriptive indicators… rather than causal estimates" (Brynjolfsson et al., 2026). Anthropic's trial of 52 developers, "mostly junior", found a "statistically significant decrease in mastery" among those using AI assistance, with quiz scores of 50% against 67%, no significant gain in speed and the largest gap on debugging (Shen and Tamkin, 2026). The worry here is what happens to people, and to skill, when the work that trained them is done by something else. I will return to it.
+
+The seventh reading is less a position than a pattern in the evidence: the work is moving into review and verification. DORA warns that "acceleration can expose weaknesses downstream" (Harvey and DeBellis, 2025). The AI-DLC makes the human a validator, with the AI implementing "only after receiving human validation" (AWS, 2025). GitClear's clones are, among other things, more code for somebody to read. Taken together, they say the human effort is shifting from doing the work towards checking it.
+
+The received view I began with lives at the first two points on that spectrum: the same lifecycle, with assistance added or its slow parts compressed. I have said I think it is wrong. But every position on the spectrum is held by serious people with dated evidence, and any claim to succeed the SDLC has to say where it stands among them.
+
 ## References
+
+Anthropic (2025) "Anthropic Economic Index: AI's Impact on Software Development", Anthropic, 28 April, <https://www.anthropic.com/research/impact-software-development>.
+
+AWS (2025) "AI-Driven Development Life Cycle: Reimagining Software Engineering", by Raja SP, *AWS DevOps Blog*, 31 July, <https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/>.
+
+Brynjolfsson, E., Chandar, B. and Chen, R. (2026) "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence", Stanford Digital Economy Lab, August revision, <https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf>.
+
+Callon, M. (1986) "Some Elements of a Sociology of Translation: Domestication of the Scallops and the Fishermen of St Brieuc Bay", in Law, J. (ed.) *Power, Action and Belief: A New Sociology of Knowledge?*, Sociological Review Monograph 32, Routledge & Kegan Paul, London, pp.196–233.
+
+Debois, P. (2026) "Context Development Lifecycle", *Tessl Blog*, 19 February, <https://tessl.io/blog/context-development-lifecycle-better-context-for-ai-coding-agents>.
+
+Delimarsky, D. (2025) "Spec-driven development with AI: get started with a new open source toolkit", *The GitHub Blog*, 2 September, <https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/>.
+
+DORA (2024) "Announcing the 2024 DORA report", *Google Cloud Blog*, 23 October, <https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report>.
+
+Fowler, M. (2025) "LLMs bring new nature of abstraction", *martinfowler.com*, 24 June, <https://martinfowler.com/articles/2025-nature-abstraction.html>.
+
+GitClear (2025) "AI Copilot Code Quality: 2025 Look Back at 12 Months of Data", GitClear, <https://www.gitclear.com/ai_assistant_code_quality_2025_research>.
+
+Harvey, N. and DeBellis, D. (2025) "Announcing the 2025 DORA Report", *Google Cloud Blog*, September, <https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report>.
+
+Hassan, A.E., Oliva, G.A., Lin, D., Chen, B. and Jiang, Z.M. (2024) "Towards AI-Native Software Engineering (SE 3.0): A Vision and a Challenge Roadmap", arXiv:2410.06107, 8 October, <https://arxiv.org/abs/2410.06107>.
+
+Johnson, E.J. and Goldstein, D. (2003) "Do Defaults Save Lives?", *Science*, 302(5649), pp.1338–1339, doi:10.1126/science.1091721.
 
 Karpathy, A. (2017) "Software 2.0", *Medium*, 11 November, <https://karpathy.medium.com/software-2-0-a64152b37c35>.
 
 Karpathy, A. (2025a) "Software Is Changing (Again)", keynote address, YC AI Startup School, 17 June, <https://www.youtube.com/watch?v=LCEmiRjPEtQ>.
+
+Karpathy, A. (2025b) Post on X, 2 February, <https://x.com/karpathy/status/1886192184808149383>.
+
+Karpathy, A. (2025c) Post on X, 25 June, <https://x.com/karpathy/status/1937902205765607626>.
 
 Karpathy, A. (2026) Post on X, 4 February, <https://x.com/karpathy/status/2019137879310836075>.
 
 Li, R. (2011) *'Killing the Noob': A Thesis on Meritocracy and What It Has to Do with Massive Multiplayer Online Role Playing Games*, Bachelor of Arts (Honours) (Media, Games and Multimedia) thesis, Swinburne University of Technology.
 
 Li, R. (2020) *Reconceptualizing MMORPG Play: A Study on Actor-Network Theory in Practice*, PhD thesis, Swinburne University of Technology.
+
+Lütke, T. (2025) Post on X, 19 June, <https://x.com/tobi/status/1935533422589399127>.
+
+METR (2025) "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity", METR, 10 July, <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>.
+
+METR (2026) "We are Changing our Developer Productivity Experiment Design", METR, 24 February, <https://metr.org/blog/2026-02-24-uplift-update/>.
+
+Peng, S., Kalliamvakou, E., Cihon, P. and Demirer, M. (2023) "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot", arXiv:2302.06590, 13 February, <https://arxiv.org/abs/2302.06590>.
+
+Shen, J.H. and Tamkin, A. (2026) "How AI assistance impacts the formation of coding skills", Anthropic, 29 January, <https://www.anthropic.com/research/AI-assistance-coding-skills>.
+
+Swaminathan, N. and Singh, D. (2025) "Introducing Kiro", *Kiro Blog*, 14 July, <https://kiro.dev/blog/introducing-kiro/>.
+
+Tane, B. (2026) "The Software Development Lifecycle Is Dead", 21 February, <https://boristane.com/blog/the-software-development-lifecycle-is-dead/>.
+
+*United States v Google LLC* (2024) Memorandum Opinion, Case No. 20-cv-3010 (APM), United States District Court for the District of Columbia, ECF No. 1033, 5 August, <https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1033.0_2.pdf>.
+
+*United States v Google LLC* (2025) Memorandum Opinion (remedies), Case No. 20-cv-3010 (APM), United States District Court for the District of Columbia, ECF No. 1436, 2 September, <https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1436.0.pdf>.
