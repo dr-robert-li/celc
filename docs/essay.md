@@ -190,6 +190,28 @@ One question I will raise here and not argue. If juniors learned their trade on 
 
 One more episode in the history of production bears on all of this. In 1987 Robert Solow, reviewing a book for the *New York Times Book Review*, remarked that the computer age could be seen everywhere except in the productivity statistics (Solow, 1987). Three years later the economic historian Paul David answered with a precedent. In 1900, he wrote, observers "well might have remarked that the electric dynamos were to be seen 'everywhere but in the productivity statistics!'" (David, 1990, p.356). Factory electrification had no impact on manufacturing productivity "before the early 1920s… This was four decades after the first central power station opened for business" (David, 1990, p.357). Four decades is a long time for a technology to be everywhere and to show up nowhere that anyone was measuring.
 
+David's explanation for his period was material. The delay, he argued, came from "the unprofitability of replacing still serviceable manufacturing plants" (David, 1990, p.357). A factory built around a steam engine was built around its line shaft: one engine turning one long shaft, with every machine in the building belted to it, and the building itself shaped, often over several storeys, to keep the machines close to the shaft. Nobody tears that down while it still works. So for a generation manufacturers compromised. The "'group drive' system", in which electric motors drove groups of machines through shorter shafts, stayed in vogue from the mid-1890s to the eve of the 1920s (David, 1990, p.357). The gain came only with unit drive, a motor for each machine, which freed the layout. Factories could be single-storey and arranged around the flow of the work, not the reach of a shaft (David, 1990, p.358), and about half of the acceleration in total factor productivity in manufacturing between 1919 and 1929 is statistically accounted for by the growth of that secondary motor capacity (David, 1990). The old plant had to wear out before it was worth replacing. For 1900, that is the right account, and a historical materialist should be glad of it.
+
+The material conditions of this transition are different, and so, I think, is the cause of its lag. Capital is not what is short. In June 2026 Morgan Stanley forecast that AI-related global debt issuance would "more than double to nearly $570 billion in 2026", with four hyperscalers "expected to spend $700 billion in outlays this year" and hyperscaler capital expenditure passing "$1 trillion in 2027" (Reuters, 2026). It could be argued that capital is being directed at AI faster than at any technology before it, enough to draw on money that would otherwise sit in the safe havens; I would put it no more strongly than that. The nearer precedent is not the dynamo but the internet, and the capital sunk into the infrastructure that carried it: dramatic overcapacity, and bets on businesses that were flimsy at best. At the time nobody knew how much capacity would be needed, and the only position anyone took was not to have too little and be left behind. Fear of missing out is a strong motive for companies and their investors. It is only sometimes an existential one.
+
+Capital and material conditions do return, but as a risk on the horizon, not as the cause of the lag today. The production of the core components of compute is concentrated in a handful of places, Taiwan and South Korea above all, with Japan and the United States close behind, and a conflict in East Asia that drew those countries in could disrupt supply badly enough to create a material crunch. Or this generation of hardware may reach a scaling limit, and the next become prohibitively expensive in both its scale and its sophistication. There are countervailing forces: a crop of startups trying to build competitive alternatives to Nvidia's chips and the moat around CUDA, and models that are increasingly able to optimise the kernels they run on. That last is early. KernelBench found frontier reasoning models "matching the PyTorch baseline in less than 20% of the cases" (Ouyang et al., 2025), and a few months later CUDA-L1, trained by reinforcement learning, reported "an average speedup of x3.12 with a median speedup of x1.42" across the same benchmark's 250 kernels (Li et al., 2025). These are medium- to long-term risks, and they cut both ways.
+
+The resistance is real as well, and it is already showing up in public. In the United States midterm elections of November 2026, local communities "opposed data center-related ballot measures in 40 out of 41 cases" (Capoot, 2026). Add slow training and slow adoption inside organisations, and it is tempting to call all of this the material brake. In my view, unqualified as it may be, it is less an impediment of that kind than a symptom of the same thing as the rest: a lack of imagination about what the technology is for, beyond the data centre that is to be built down the road.
+
+That is where I place the lag. Its cause is mainly a failure of imagination, and the reorganisation it holds up is wider than ways of working. It runs through the infrastructure of society, business, government, media and technology, all of which were built around the old forces of production and all of which have to be rebuilt around the new. That will take longer than the accelerationists expect, and it will probably be faster than the doomers would have hoped. The historical evidence is on the side of speed. Diego Comin and Bart Hobijn, tracing fifteen technologies across 166 countries over two centuries, found that "on average, countries have adopted technologies 45 years after their invention", and that "Newer technologies have been adopted faster than old ones" (Comin and Hobijn, 2010). Generative AI fits the trend. By late 2024 "nearly 40 percent of the U.S. population age 18-64" was using it, and "overall adoption has been faster than either PCs or the internet", though at work it has been only "as fast as the personal computer" (Bick et al., 2024). By the measures we have, this is on track to be the fastest technology transition yet. It certainly feels that way.
+
+A historical materialist should be uneasy calling the cause of a lag imagination, and I am, a little. But the imagination I mean is not a free-floating idea. It is the capacity of people and organisations formed under one set of relations of production to picture another, and it is limited by the relations it has to see past. In David's factories the forces of production outran the relations because the old plant was too valuable to scrap. In ours they outrun them because the old organisation is too familiar to see around. The frame is the same. The material conditions differ, and so does what holds the relations back.
+
+The misstep, while that lasts, is to treat AI as a better steam engine inside the old line shaft. In software the line shaft is the sprint: one rhythm to which every piece of work is belted, with its planning, its review and its release turned at the same speed. Using agents to write code faster inside a standard two-week sprint is group drive, a new motor on the old shaft. AWS's "shorter, more intense work cycles" (AWS, 2025) spin the shaft faster. What happens next is what Movement 1's evidence predicts: the code piles up faster than review and deployment can absorb it. DORA warns that "acceleration can expose weaknesses downstream" (Harvey and DeBellis, 2025), and Faros, a vendor whose telemetry is correlational and should be read that way, reports that "Median time in review is up 441.5%" (Faros, 2026). The motor got faster. The shaft did not change.
+
+The reorganisation is to take the shaft down: to give each unit of work its own motor, and to arrange the work around its flow instead of around one shared rhythm. In its most ambitious form, that means an engineer directing an army of micro-agents, each with its own feature, its own tests and its own deployment loop. We already have the proliferation, and proliferation is not the problem in itself. The problem is oversight and coordination: of the humans, of the agents, and, it could be argued, of the platforms, networks and data underneath them, which have never been well coordinated or well monitored in general. Movement 2 has already named the risk. When services multiplied, "The risks the methods had been meant to remove returned at the seams, where nobody owned them." A fleet of agents has seams too, and more of them.
+
+There is no consensus yet on how to coordinate it, only a spectrum of approaches. At one end is complete control: a central orchestrator that delegates every task and checks every result, which is hard to achieve over a system that is probabilistic all the way down. At the other is laissez-faire, teams that let 'er rip and report development velocities that ought to embarrass them. Yubin Kim and Xin Liu's experiments show what is at stake at each end, without settling which is right for any given organisation: agents working in parallel without talking to each other amplified errors "by up to 17.2x", a central orchestrator "contained this amplification to just 4.4x", and on tasks that had to be done in order "every multi-agent variant we tested degraded performance by 39-70%" (Kim and Liu, 2026). Where most organisations land will probably be somewhere in between. Where any one of them should land is a question of method, with benefits, trade-offs and risks to weigh, and this essay leaves it open. It only sets the frame.
+
+David himself warned against pushing his analogy too far. "Computers are not dynamos" (David, 1990), and agents are not electric motors. The dynamo supplied one undifferentiated thing, power, and the factory could be rebuilt around wherever the power now was. What agents supply is less uniform, and what the reorganisation has to be built around is less obvious. The analogy gives the shape of the change, a technology already everywhere, waiting on a reorganisation of the work around it. It does not give the timing, and it does not say what to build around.
+
+That last question is the one that matters. The factory was rebuilt around where the power now was. A lifecycle for generated software has to be rebuilt around where the complexity now is, because Movement 2 showed that keeping it understandable is what every method was for. Movement 4 argues that it has moved into context, and asks whether all of it did.
+
 ## References
 
 Anthropic (2025) "Anthropic Economic Index: AI's Impact on Software Development", Anthropic, 28 April, <https://www.anthropic.com/research/impact-software-development>.
@@ -199,6 +221,8 @@ AWS (2025) "AI-Driven Development Life Cycle: Reimagining Software Engineering",
 Bainbridge, L. (1983) "Ironies of Automation", *Automatica*, 19(6), pp.775–779.
 
 Bedard, J., Kropp, M., Hsu, M., Karaman, O.T., Hawes, J. and Kellerman, G.R. (2026) "When Using AI Leads to 'Brain Fry'", *Harvard Business Review*, 5 March, <https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry>.
+
+Bick, A., Blandin, A. and Deming, D.J. (2024) "The Rapid Adoption of Generative AI", NBER Working Paper 32966, National Bureau of Economic Research, September, doi:10.3386/w32966, <https://www.nber.org/papers/w32966>.
 
 Böckeler, B. (2025) "Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl", *martinfowler.com*, 15 October, <https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html>.
 
@@ -216,6 +240,10 @@ Callon, M. (1986) "Some Elements of a Sociology of Translation: Domestication of
 
 Callon, M. (1991) "Techno-economic Networks and Irreversibility", in Law, J. (ed.) *A Sociology of Monsters: Essays on Power, Technology and Domination*, Routledge, London, pp.132–161.
 
+Capoot, A. (2026) "Anthropic IPO meets AI backlash after midterms show stinging rebuke of data centers", *CNBC*, 7 November, <https://www.cnbc.com/2026/11/07/anthropic-ipo-ai-data-center-backlash.html>.
+
+Comin, D. and Hobijn, B. (2010) "An Exploration of Technology Diffusion", *American Economic Review*, 100(5), pp.2031–2059, doi:10.1257/aer.100.5.2031.
+
 Conway, M.E. (1968) "How Do Committees Invent?", *Datamation*, 14(4), pp.28–31.
 
 David, P.A. (1990) "The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox", *American Economic Review*, 80(2), Papers and Proceedings, pp.355–361.
@@ -227,6 +255,8 @@ Delimarsky, D. (2025) "Spec-driven development with AI: get started with a new o
 DORA (2024) "Announcing the 2024 DORA report", *Google Cloud Blog*, 23 October, <https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report>.
 
 Eberhardt, C. (2025) "Putting Spec Kit Through Its Paces: Radical Idea or Reinvented Waterfall?", *Scott Logic Blog*, 26 November, <https://blog.scottlogic.com/2025/11/26/putting-spec-kit-through-its-paces-radical-idea-or-reinvented-waterfall.html>.
+
+Faros (2026) "AI acceleration whiplash", Faros AI Blog, 12 April, <https://faros.ai/blog/ai-acceleration-whiplash-takeaways>.
 
 Ford, H. and Crowther, S. (1922) *My Life and Work*, Doubleday, Page & Company, Garden City, NY, Project Gutenberg eBook #7213, <https://www.gutenberg.org/ebooks/7213>.
 
@@ -252,6 +282,8 @@ Karpathy, A. (2025c) Post on X, 25 June, <https://x.com/karpathy/status/19379022
 
 Karpathy, A. (2026) Post on X, 4 February, <https://x.com/karpathy/status/2019137879310836075>.
 
+Kim, Y. and Liu, X. (2026) "Towards a science of scaling agent systems: When and why agent systems work", *Google Research Blog*, 28 January, <https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/>.
+
 Latour, B. (1999) *Pandora's Hope: Essays on the Reality of Science Studies*, Harvard University Press, Cambridge, MA.
 
 Latour, B. (2005) *Reassembling the Social: An Introduction to Actor-Network-Theory*, Oxford University Press, Oxford.
@@ -267,6 +299,8 @@ Lehman, M.M. (1980) "Programs, Life Cycles, and Laws of Software Evolution", *Pr
 Li, R. (2011) *'Killing the Noob': A Thesis on Meritocracy and What It Has to Do with Massive Multiplayer Online Role Playing Games*, Bachelor of Arts (Honours) (Media, Games and Multimedia) thesis, Swinburne University of Technology.
 
 Li, R. (2020) *Reconceptualizing MMORPG Play: A Study on Actor-Network Theory in Practice*, PhD thesis, Swinburne University of Technology.
+
+Li, X., Wang, A., Wang, G., Li, J. and Shum, C. (2025) "CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning", arXiv:2507.14111, 18 July, <https://arxiv.org/abs/2507.14111>.
 
 Lukács, G. (1971) "Reification and the Consciousness of the Proletariat", in *History and Class Consciousness: Studies in Marxist Dialectics*, trans. R. Livingstone, Merlin Press, London (first published 1923).
 
@@ -284,11 +318,15 @@ Naur, P. (1985) "Programming as Theory Building", *Microprocessing and Microprog
 
 Ohno, T. (1988) *Toyota Production System: Beyond Large-Scale Production*, Productivity Press, Cambridge, MA (first published in Japanese 1978).
 
+Ouyang, A., Guo, S., Arora, S., Zhang, A.L., Hu, W., Ré, C. and Mirhoseini, A. (2025) "KernelBench: Can LLMs Write Efficient GPU Kernels?", arXiv:2502.10517, 14 February, <https://arxiv.org/abs/2502.10517>.
+
 Parker, M. and Slaughter, J. (1988) *Choosing Sides: Unions and the Team Concept*, South End Press, Boston.
 
 Parnas, D.L. (1972) "On the Criteria To Be Used in Decomposing Systems into Modules", *Communications of the ACM*, 15(12), pp.1053–1058.
 
 Peng, S., Kalliamvakou, E., Cihon, P. and Demirer, M. (2023) "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot", arXiv:2302.06590, 13 February, <https://arxiv.org/abs/2302.06590>.
+
+Reuters (2026) "Global AI debt issuance to top $500 billion in 2026, Morgan Stanley says", Reuters, 10 June, <https://finance.yahoo.com/sectors/technology/articles/global-ai-debt-issuance-top-085023868.html>.
 
 Shen, J.H. and Tamkin, A. (2026) "How AI assistance impacts the formation of coding skills", Anthropic, 29 January, <https://www.anthropic.com/research/AI-assistance-coding-skills>.
 
