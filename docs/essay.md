@@ -128,6 +128,22 @@ Read Naur's p.258 again with that in mind and most of it holds. He is right that
 
 That is the theory of it. The practice is the division I drew in the previous movement. A model now does what the expert mediator did: it interprets the records a business produces in its daily operations and renders them usable by everyone else. Human judgement stays obligatory in the narrow, governed portion, in the business rules, the compliance obligations, the brand and the taste that a business keeps its own hand on. That is not a concession that theory lives in people after all. It describes where the network routes certain decisions, not where its theory resides. People matter to a program's theory, as Naur said. They are not the only things that hold it.
 
+The team that holds a program's theory is also a network in the plainest arithmetical sense, and Fred Brooks did the sum. Developers who each need to talk to every other have n(n−1)/2 communication paths between them: one for two developers, 45 for ten. That overhead, together with the time newcomers take to learn what the others already know, is what sits behind his law: "Adding manpower to a late software project makes it later" (Brooks, 1975). It is the same unconstrained worst case as on the functional layer, and it is cut down the same way. Team structures, the interfaces between teams and the documents that pass across them exist so that most people never need to talk to most others. They are information hiding for people.
+
+The two networks do not stay apart. Melvin Conway's observation, which Brooks later named Conway's law, is that "organizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations" (Conway, 1968). Teams that do not talk produce interfaces that do not fit, and the glue code at the seams is where the gaps in the social network show up in the functional one.
+
+For a long time that was an engineer's proverb. It has since been tested. Alan MacCormack, Carliss Baldwin and John Rusnak compared matched pairs of products from tightly and loosely coupled organisations, the loosely coupled ones open-source, and found the loosely coupled organisations' products significantly more modular, by up to a factor of six in how far a change propagates (MacCormack et al., 2012). Nachiappan Nagappan, Brendan Murphy and Victor Basili found, on Windows Vista, that measures of the organisation predicted which parts of the system would fail better than the code metrics did, churn, complexity, coverage and dependencies among them (Nagappan et al., 2008). The shape of the organisation is in the code, and the failures follow it.
+
+Put the two layers together and the trouble compounds. A dense social network laid over a dense functional network asks more of the people in it than anyone can carry. No developer can hold the system's state in their head, and the effects of a single change spread combinatorially, along functional edges and social ones at once, faster than any one person can follow. As I put it in my thesis, about a different kind of network, "the human mind is often unable to detect network complexity, much less comprehend it on an infinite scale" (Li, 2020, p.86). What follows is familiar to anyone who has looked after a large estate: technical debt, bugs and deployments that come further and further apart. Every method I listed at the start is, in effect, a strategy for keeping one or both of these networks sparse.
+
+When the methods grew overweight, the answer was to cut the system up until each piece was small enough for a method to serve again. That is where microservices came from: a service per team, sized so the team could hold it, behind an interface the other teams could rely on without looking inside. It was black-boxing on purpose. Naur's programs were black-boxed by default, as a side effect of the work; a microservice is black-boxed by design, its insides hidden so that everyone else can treat it as inputs and outputs. For each team, for a while, it worked.
+
+Then the boxes multiplied. Callon's word is the exact one for what each service became, and this is the place to use it: "The process of punctualisation thus converts an entire network into a single point or node in another network" (Callon, 1991). Each service was a network of code, people and decisions folded into a node, and the estate was a network of those nodes. The arithmetic I began with did not go away. It moved up a level, from functions to services and from developers to teams, and it moved to where fewer people were looking. Each team could see inside its own box and the interfaces of its neighbours. Nobody could trace the network the boxes made between them, and adding architects to watch over it did not bring the view back, because each of them watched from inside a part. The risks the methods had been meant to remove returned at the seams, where nobody owned them. My thesis calls the black-boxed state "highly precarious", carrying "the risk of subversion, and the encapsulated network of associations degenerating into a mess of naked, failing networks" (Li, 2020, p.87). That is a fair description of a large microservice estate on a bad night.
+
+Some organisations have since pulled their services back together, into fewer of them and into a single repository. It is tempting to read that as the pendulum swinging back, monolith against microservice, as though the argument had been about how many boxes to have. I don't think it ever was. What consolidation bought, where it worked, was an architecture people could understand again: fewer boxes, fewer seams, a network somebody could trace from end to end. Consolidation was the means. Understandability was the objective, and it had been the objective of every method on the list. Waterfall's specification, XP's tests, Scrum's small team and the microservice's small service were each a way of keeping a system within what its people could understand.
+
+That is the ground the rest of this essay stands on. If every method was, in the end, a way of keeping software understandable to the people responsible for it, then the question for a lifecycle of generated software is not how quickly it produces code. It is where the complexity goes once people no longer write the code, and what keeps it understandable when it gets there. Movement 4 argues that it goes into context. Before that, there is an older story to tell, about what happens to the organisation of work when the thing that powers it changes.
+
 ## References
 
 Anthropic (2025) "Anthropic Economic Index: AI's Impact on Software Development", Anthropic, 28 April, <https://www.anthropic.com/research/impact-software-development>.
@@ -136,6 +152,8 @@ AWS (2025) "AI-Driven Development Life Cycle: Reimagining Software Engineering",
 
 Böckeler, B. (2025) "Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl", *martinfowler.com*, 15 October, <https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html>.
 
+Brooks, F.P. (1975) *The Mythical Man-Month: Essays on Software Engineering*, Addison-Wesley, Reading, MA.
+
 Brooks, F.P. (1987) "No Silver Bullet: Essence and Accidents of Software Engineering", *Computer*, 20(4), pp.10–19.
 
 Brynjolfsson, E., Chandar, B. and Chen, R. (2026) "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence", Stanford Digital Economy Lab, August revision, <https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf>.
@@ -143,6 +161,8 @@ Brynjolfsson, E., Chandar, B. and Chen, R. (2026) "Canaries in the Coal Mine? Si
 Callon, M. (1986) "Some Elements of a Sociology of Translation: Domestication of the Scallops and the Fishermen of St Brieuc Bay", in Law, J. (ed.) *Power, Action and Belief: A New Sociology of Knowledge?*, Sociological Review Monograph 32, Routledge & Kegan Paul, London, pp.196–233.
 
 Callon, M. (1991) "Techno-economic Networks and Irreversibility", in Law, J. (ed.) *A Sociology of Monsters: Essays on Power, Technology and Domination*, Routledge, London, pp.132–161.
+
+Conway, M.E. (1968) "How Do Committees Invent?", *Datamation*, 14(4), pp.28–31.
 
 Debois, P. (2026) "Context Development Lifecycle", *Tessl Blog*, 19 February, <https://tessl.io/blog/context-development-lifecycle-better-context-for-ai-coding-agents>.
 
@@ -192,9 +212,13 @@ Lukács, G. (1971) "Reification and the Consciousness of the Proletariat", in *H
 
 Lütke, T. (2025) Post on X, 19 June, <https://x.com/tobi/status/1935533422589399127>.
 
+MacCormack, A., Baldwin, C. and Rusnak, J. (2012) "Exploring the Duality between Product and Organizational Architectures: A Test of the 'Mirroring' Hypothesis", *Research Policy*, 41(8), pp.1309–1324.
+
 METR (2025) "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity", METR, 10 July, <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>.
 
 METR (2026) "We are Changing our Developer Productivity Experiment Design", METR, 24 February, <https://metr.org/blog/2026-02-24-uplift-update/>.
+
+Nagappan, N., Murphy, B. and Basili, V. (2008) "The Influence of Organizational Structure on Software Quality: An Empirical Case Study", in *Proceedings of the 30th International Conference on Software Engineering (ICSE '08)*, ACM, New York, pp.521–530.
 
 Naur, P. (1985) "Programming as Theory Building", *Microprocessing and Microprogramming*, 15(5), pp.253–261, doi:10.1016/0165-6074(85)90032-8.
 
