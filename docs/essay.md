@@ -138,9 +138,9 @@ Karpathy, A. (2025c) Post on X, 25 June, <https://x.com/karpathy/status/19379022
 
 Karpathy, A. (2026) Post on X, 4 February, <https://x.com/karpathy/status/2019137879310836075>.
 
-Laycock, R., Fowler, M., Ferri, A., Subramaniam, B., Böckeler, B., Oliver, B., Falconi Crispim, C., Riddhagni, C.C., Elden, E., Lewis, J., Morris, K., Mugrage, K., Ormaza, M., Rivera, N., Ford, N., Wang, N., Asthagiri, N., Shah, P., Natesan, S., Liu, S., Seth, V. and Amaral, W. (2025) *Technology Radar*, Vol. 33, November, Thoughtworks, <https://www.thoughtworks.com/radar/techniques/spec-driven-development>.
+Laycock, R. et al. (2025) *Technology Radar*, Vol. 33, November, Thoughtworks, <https://www.thoughtworks.com/radar/techniques/spec-driven-development>.
 
-Laycock, R., Ferri, A., Cook, B., Geraldo, C., Riddhagni, C.C., Ford, C., Elden, E., Morris, K., Muhilvarnan V, Mugrage, K., Rivera, N., Wang, N., Martins, R., Natesan, S., Liu, S., Gregorio, T., Kumar, V. and Seth, V. (2026) *Technology Radar*, Vol. 35, November, Thoughtworks, <https://www.thoughtworks.com/radar/tools/openspec>.
+Laycock, R. et al. (2026) *Technology Radar*, Vol. 35, November, Thoughtworks, <https://www.thoughtworks.com/radar/tools/openspec>.
 
 Li, R. (2011) *'Killing the Noob': A Thesis on Meritocracy and What It Has to Do with Massive Multiplayer Online Role Playing Games*, Bachelor of Arts (Honours) (Media, Games and Multimedia) thesis, Swinburne University of Technology.
 
