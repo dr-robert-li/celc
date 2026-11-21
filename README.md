@@ -1,16 +1,44 @@
-# Software is the horseless-carriage and the case for the Context Engineering Lifecycle
+# The Context Engineering Lifecycle (CELC)
 
-An essay by Dr Robert Li.
+By Dr Robert Li.
 
-The essay argues that software is being redefined, from a what bundled with a how into data and capabilities rendered in somebody else's harness, and that a lifecycle built to produce the old thing cannot simply be run faster to produce the new one. In its place it sets out the Context Engineering Lifecycle (CELC): a lifecycle whose managed unit is context, where the SDLC's was functions and code.
+Agents now write much of the code, and the software development lifecycle (SDLC) was built for people writing it. This project argues that the SDLC needs a successor, and sets one out: the Context Engineering Lifecycle, a lifecycle whose managed unit is context, the recorded material that agents act on, where the SDLC's was functions and code.
 
-## Read it
+## The documents
 
-- [docs/essay.md](docs/essay.md) (Markdown)
-- [docs/essay.pdf](docs/essay.pdf) (PDF, A4)
+The project is three documents that make one argument. Each is derived from the one before it, so every piece of guidance can be traced back to the argument that supports it.
 
-## Status
+| Document | Reader | What it does | Status |
+|---|---|---|---|
+| Essay | General | Argues that software itself is being redefined, and that the SDLC cannot simply be run faster to produce the new thing | Published (v2.0) |
+| Whitepaper | Technology leaders | Turns the essay's argument into a lifecycle model and guidance for adopting it | Draft, under author review |
+| Operating procedures | Internal | Turn the whitepaper's guidance into day-to-day practice | Not started; will not be published here |
 
-Draft. The text may still change. A follow-up whitepaper will turn the essay's argument into practical guidance.
+## Read them
 
-Citations use the Harvard (Australian) author-date style, with the full reference list at the end of the essay.
+**Essay:** *Software is the horseless-carriage and the case for the Context Engineering Lifecycle*
+
+- [Published version](https://drli.blog/posts/software-is-the-horseless-carriage/) (v2.0)
+- [docs/essay-v2.0.md](docs/essay-v2.0.md), the same text in Markdown
+- [docs/essay-v2.1.md](docs/essay-v2.1.md) and [PDF](docs/essay-v2.1.pdf), v2.0 with an addendum
+
+**Whitepaper:** *The Context Engineering Lifecycle: a guide for technology leaders*
+
+- [docs/whitepaper.md](docs/whitepaper.md) (Markdown)
+- [docs/whitepaper.pdf](docs/whitepaper.pdf) (PDF, A4)
+
+The whitepaper is a draft and may still change. It covers:
+
+- what context is, and the terms the lifecycle uses
+- the lifecycle model and how context flows through its seven stages
+- what happens to requirements, working methods, ceremonies and scaling
+- how to adopt it: assess, align, pilot, scale, including a maturity assessment across the seven stages
+
+## Earlier versions and working material
+
+- [docs/essay-v1.0.md](docs/essay-v1.0.md): the first full draft of the essay. [docs/essay.md](docs/essay.md) and [docs/essay.pdf](docs/essay.pdf) are the same draft under its original file name.
+- [docs/essay-tension-log.md](docs/essay-tension-log.md): the open questions in the essay's argument, the strongest case on each side, and how each was settled.
+
+## Citations
+
+Citations use the Harvard (Australian) author-date style. Each document carries its full reference list at the end.
