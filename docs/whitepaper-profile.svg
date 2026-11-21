@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 410" width="800" height="410" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="t">Maturity profile of the worked example</title>
+  <desc id="d">Bar chart of an invented enterprise delivery team with a long-lived technical estate, scored on the seven lifecycle stages from level 1, Ad hoc, to level 4, Adaptive. Intake is at level 2, Triage 2, Discover and experiment 1 with level 2 partly met, Spec 3, Build and verify 2 with level 3 partly met, Learn 2 and Prune 1. Partly met levels are shown as lighter hatched segments and do not count. A dashed line at level 1 marks the overall level, Ad hoc, set by the two weakest stages, Discover and experiment and Prune.</desc>
+  <defs>
+    <pattern id="partly" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <rect width="6" height="6" fill="#86b6ef"/>
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#1c5cab" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="410" fill="#fcfcfb"/>
+  <text x="24" y="28" font-size="16" font-weight="600" fill="#0b0b0b">Maturity profile of the worked example</text>
+  <rect x="24" y="44" width="14" height="14" fill="#256abf"/>
+  <text x="44" y="56" font-size="13" fill="#52514e">Level met</text>
+  <rect x="130" y="44" width="14" height="14" fill="url(#partly)"/>
+  <text x="150" y="56" font-size="13" fill="#52514e">Next level partly met (does not count)</text>
+  <line x1="400" y1="51" x2="428" y2="51" stroke="#0b0b0b" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="436" y="56" font-size="13" fill="#52514e">Overall level, set by the weakest stage</text>
+  <line x1="150" y1="285" x2="690" y2="285" stroke="#e1e0d9" stroke-width="1"/>
+  <text x="140" y="289" font-size="13" text-anchor="end" fill="#52514e">1 Ad hoc</text>
+  <line x1="150" y1="220" x2="690" y2="220" stroke="#e1e0d9" stroke-width="1"/>
+  <text x="140" y="224" font-size="13" text-anchor="end" fill="#52514e">2 Defined</text>
+  <line x1="150" y1="155" x2="690" y2="155" stroke="#e1e0d9" stroke-width="1"/>
+  <text x="140" y="159" font-size="13" text-anchor="end" fill="#52514e">3 Enforced</text>
+  <line x1="150" y1="90" x2="690" y2="90" stroke="#e1e0d9" stroke-width="1"/>
+  <text x="140" y="94" font-size="13" text-anchor="end" fill="#52514e">4 Adaptive</text>
+  <line x1="150" y1="350" x2="690" y2="350" stroke="#c3c2b7" stroke-width="1"/>
+  <rect x="174.6" y="220" width="28" height="130" fill="#256abf"><title>Intake: level 2, Defined</title></rect>
+  <text x="188.6" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Intake</text>
+  <rect x="251.7" y="220" width="28" height="130" fill="#256abf"><title>Triage: level 2, Defined</title></rect>
+  <text x="265.7" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Triage</text>
+  <rect x="328.9" y="285" width="28" height="65" fill="#256abf"><title>Discover and experiment: level 1, Ad hoc, next level partly met</title></rect>
+  <rect x="328.9" y="220" width="28" height="63" fill="url(#partly)"/>
+  <text x="342.9" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Discover and</text>
+  <text x="342.9" y="386" font-size="13" text-anchor="middle" fill="#0b0b0b">experiment</text>
+  <rect x="406.0" y="155" width="28" height="195" fill="#256abf"><title>Spec: level 3, Enforced</title></rect>
+  <text x="420.0" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Spec</text>
+  <rect x="483.1" y="220" width="28" height="130" fill="#256abf"><title>Build and verify: level 2, Defined, next level partly met</title></rect>
+  <rect x="483.1" y="155" width="28" height="63" fill="url(#partly)"/>
+  <text x="497.1" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Build and</text>
+  <text x="497.1" y="386" font-size="13" text-anchor="middle" fill="#0b0b0b">verify</text>
+  <rect x="560.3" y="220" width="28" height="130" fill="#256abf"><title>Learn: level 2, Defined</title></rect>
+  <text x="574.3" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Learn</text>
+  <rect x="637.4" y="285" width="28" height="65" fill="#256abf"><title>Prune: level 1, Ad hoc</title></rect>
+  <text x="651.4" y="370" font-size="13" text-anchor="middle" fill="#0b0b0b">Prune</text>
+  <line x1="150" y1="285" x2="690" y2="285" stroke="#0b0b0b" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="698" y="281" font-size="13" font-weight="600" fill="#0b0b0b">Overall:</text>
+  <text x="698" y="297" font-size="13" font-weight="600" fill="#0b0b0b">1 Ad hoc</text>
+</svg>
