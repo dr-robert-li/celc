@@ -210,7 +210,13 @@ Start with the questions everyone in the work has to answer to get what they nee
 
 Locate the bottleneck. Where agents write the code, expect it in review, oversight and remediation, and check whether it sits there in your own queue by how long changes wait (essay, "Where the complexity went").
 
-Then score each stage against the maturity matrix. Each cell is the criterion for that stage at that level; the checklist statements test it.
+Then score each stage. The assessment has three parts, and each feeds the next.
+
+1. The maturity matrix describes what each stage looks like at each level. Read it; do not score it.
+2. The checklist turns each cell from Defined to Adaptive into one or two statements you can observe. Score those.
+3. The profile plots the level each stage reaches, which the statement scores decide.
+
+**The matrix.** Each cell is the criterion for that stage at that level.
 
 | Stage | Ad hoc | Defined | Enforced | Adaptive |
 |---|---|---|---|---|
@@ -222,18 +228,7 @@ Then score each stage against the maturity matrix. Each cell is the criterion fo
 | Learn | Setbacks are absorbed and not written up | Each setback gets a review traced to its cause | Each review names the criteria, rule or spec it changed, or why none | Lessons feed shared standards across teams |
 | Prune | Nothing is retired; superseded context stays loadable | Each topic has one home; supersession is recorded | Pruning runs on a schedule with an owner; hard rules are hooks | Rules are re-tested on model change; the schedule follows the drift found |
 
-A stage reaches a level only when every statement at that level and below scores yes. Level 1 has no statements, so every stage starts there. A statement scored partly shows in the profile and does not count toward a level. The overall level is the level of the weakest stage, because context fails at its weakest stage: an item admitted without provenance or never pruned misleads agents however good the specs are (essay, "A lifecycle for context").
-
-| Level | Name | What it looks like | Next action |
-|---|---|---|---|
-| 1 | Ad hoc | Context practice is not yet in place for this stage | Put in the level 2 statements for the weakest stage first |
-| 2 | Defined | The practice is written down and followed, and nothing stops it being skipped | Turn the practices that get skipped into enforced gates, starting with the gate at the back of the build |
-| 3 | Enforced | The few gates that matter run on every change | Close the loop: feed every setback into the criteria, rules or spec |
-| 4 | Adaptive | The stage changes its own standards from what it learns | Re-score every quarter and after each model change; lower a stage's target where the risk does not justify the cost |
-
-The output of the assessment is the list of things to work on, and the level exists to name the next action. Keep the results inside the organisation and do not use them to rank teams. Set the target level for each stage by the risk its work carries. The highest level everywhere is not the goal.
-
-Score each statement yes, partly or no. Every statement names something you can observe: an artefact exists, or a gate runs. Each ID gives the stage and the level, so IN-3a is the first Intake statement at level 3. The codes are IN for Intake, TR for Triage, DX for Discover and experiment, SP for Spec, BV for Build and verify, LE for Learn and PR for Prune.
+**The checklist.** Score each statement yes, partly or no. Every statement names something you can observe: an artefact exists, or a gate runs. Each ID gives the stage and the level, so IN-3a is the first Intake statement at level 3. The codes are IN for Intake, TR for Triage, DX for Discover and experiment, SP for Spec, BV for Build and verify, LE for Learn and PR for Prune. IN-3a, for example, tests the Intake cell under Enforced.
 
 | ID | Statement |
 |---|---|
@@ -263,13 +258,38 @@ Score each statement yes, partly or no. Every statement names something you can 
 
 The SOPs set the review period, the risk tiers and the size limit for a spec.
 
-Plot the result as a profile. The worked example below is invented: an enterprise delivery team with a long-lived technical estate, newly running agents.
+**From scores to levels.** A stage reaches a level only when every statement at that level and below scores yes. Level 1 has no statements, so every stage starts there. A statement scored partly shows in the profile and does not count toward a level. The overall level is the level of the weakest stage, because context fails at its weakest stage: an item admitted without provenance or never pruned misleads agents however good the specs are (essay, "A lifecycle for context").
+
+The worked example is invented: an enterprise delivery team with a long-lived technical estate, newly running agents. Its scores give these levels.
+
+| Stage | Statement scores | Level reached |
+|---|---|---|
+| Intake | IN-2a yes; IN-3a no; IN-4a no | 2 |
+| Triage | TR-2a yes; TR-3a no; TR-4a no | 2 |
+| Discover and experiment | DX-2a partly; DX-3a no; DX-4a no | 1, level 2 partly met |
+| Spec | SP-2a yes; SP-3a yes; SP-4a no | 3 |
+| Build and verify | BV-2a yes; BV-3a yes; BV-3b partly; BV-4a no | 2, level 3 partly met |
+| Learn | LE-2a yes; LE-3a no; LE-4a no | 2 |
+| Prune | PR-2a no; PR-3a no; PR-3b no; PR-4a no | 1 |
+
+**The profile.** Plot the last column, one bar per stage. A bar is solid up to the level the stage reached. The next level is drawn lighter where at least one of its statements scores yes or partly.
 
 ![Bar chart of the worked example's profile, an enterprise delivery team with a long-lived technical estate. Intake is at level 2, Triage 2, Discover and experiment 1 with level 2 partly met, Spec 3, Build and verify 2 with level 3 partly met, Learn 2 and Prune 1. The two stages at level 1 are drawn as empty dotted outlines, with nothing yet in place. A line at level 1 marks the overall level, Ad hoc, set by Discover and experiment and by Prune.](whitepaper-profile.svg)
 
 *Figure 1. Profile of the worked example. Dotted outlines are stages at level 1, with nothing yet in place; lighter segments are levels partly met; the line marks the overall level.*
 
-Spec is the team's strongest stage, at level 3, and the overall level is still 1. Its next actions are the level 2 statements for its two weakest stages: record each item as complicated or complex before build starts, give each topic one home, and record supersession on both items.
+Spec is the team's strongest stage, at level 3, and the overall level is still 1. Its next actions are the level 2 statements for its two weakest stages. Record each item as complicated or complex before build starts (DX-2a). Give each topic one home, with supersession recorded on both items (PR-2a).
+
+**The next action.** Read it from each stage's level.
+
+| Level | Name | What it looks like | Next action |
+|---|---|---|---|
+| 1 | Ad hoc | Context practice is not yet in place for this stage | Put in the level 2 statements for the weakest stage first |
+| 2 | Defined | The practice is written down and followed, and nothing stops it being skipped | Turn the practices that get skipped into enforced gates, starting with the gate at the back of the build |
+| 3 | Enforced | The few gates that matter run on every change | Close the loop: feed every setback into the criteria, rules or spec |
+| 4 | Adaptive | The stage changes its own standards from what it learns | Re-score every quarter and after each model change; lower a stage's target where the risk does not justify the cost |
+
+The output of the assessment is the list of things to work on, and the level exists to name the next action. Keep the results inside the organisation and do not use them to rank teams. Set the target level for each stage by the risk its work carries. The highest level everywhere is not the goal.
 
 Match real failures against the diagnosis table. Find the pattern whose symptoms you see, and act at the stage it names (essay, "A lifecycle for context"). The examples are anonymised or illustrative.
 
