@@ -179,6 +179,149 @@ The second choice is whose stack to build on. Models and harnesses change, and w
 
 The third choice is what freed time is for. Decide it explicitly, before a default decides it. Do not default to cost-cutting: put the time first into reviewing and understanding more of what is built (essay, "From the craft shop to the dynamo"). Manage the load that oversight puts on people. Agents take the easy work, and what remains is decision and oversight all day. The WIP limit on review keeps that load visible and bounded (essay, "A lifecycle for context").
 
+## Implementing a CELC
+
+The lifecycle and the change guidance are two separate things. The lifecycle, set out above, is what manages context; the change guidance, set out below, is how an organisation gets to running it. This part answers the question the essay ends on: what an organisation has to change, and in what order, to rebuild how it works around context (essay, "The reorganisation lag").
+
+No finished lifecycle transfers from one organisation to another. What counts as understandable depends on who reads it and why, so a CELC with its stages, records and gates may suit only the organisation that formed it. The process of forming one does transfer, and so do the questions it starts from (essay, "Where the complexity went").
+
+Form your own in four steps: Assess, Align, Pilot and Scale. The steps are iterative. Each round ends with a fresh assessment, and the lessons of each round go into the next (essay, "A lifecycle for context"). Each step is defined by the context artefacts it produces.
+
+| Step | Produces |
+|---|---|
+| Assess | An inventory of where context lives, of which kind and how stale; the location of the bottleneck; a maturity profile; the diagnosis rows that match your own failures |
+| Align | A record of which context is binding and which advisory; a named owner for each kind; the few shared artefacts and enforced gates; the risk appetite |
+| Pilot | One value stream run through the seven stages, with the six fields on every item, specs shipped with their checks and a WIP limit on review |
+| Scale | Shared artefacts standardised across teams; hard rules as hooks; a pruning schedule with an owner; lessons feeding shared standards |
+
+### Assess
+
+Answer the questions everyone in the work has to answer to get what they need: what context exists, where it lives, which kind it is, how stale it is, who owns it, what reaches the window, and what happens when it is wrong. An organisation that has not asked them is already working to its vendor's framing of them (essay, "Where the complexity went").
+
+Locate the bottleneck. Where agents write the code, expect it in review, oversight and remediation, and look at how long changes wait there (essay, "Where the complexity went").
+
+Then score each stage against the maturity matrix. Each cell is the criterion for that stage at that level, and the checklist below the matrix holds the statements that test it.
+
+| Stage | Ad hoc | Defined | Enforced | Adaptive |
+|---|---|---|---|---|
+| Intake | Context arrives by any channel, with no source or date | One inbox per product; every item has a source and a date | Items without provenance are turned away; the six fields are filled at entry | Intake sources change when learning reviews show what was missing |
+| Triage | Items wait in an unranked backlog | Every item gets a recorded disposition | Parked items expire unless re-raised; human decisions have a WIP limit | Ranking rules are checked against outcomes and revised |
+| Discover and experiment | Work goes to build whatever the uncertainty | Each item is placed as complicated or complex before work starts | Complex work starts with a probe or a thin slice, with an experiment record | Experiment results update the routing signals and estate assumptions |
+| Spec | Specs are prose with no checks attached | Each spec carries acceptance checks and is readable in a sitting | Checks are written or approved by a named person and run on every change | Criteria harden on a record, and criteria creep is managed like scope |
+| Build and verify | Agent output merges on a read or unchecked | A CI baseline runs on every change; a named person owns each merge | CI/CD is the only route to production; review has a WIP limit | Review is tiered by risk, and the limit is tuned from the queue |
+| Learn | Setbacks are absorbed and not written up | Each setback gets a review traced to its cause | Each review names the criteria, rule or spec it changed, or why none | Lessons feed shared standards across teams |
+| Prune | Nothing is retired; superseded context stays loadable | Each topic has one home; supersession is recorded | Pruning runs on a schedule with an owner; hard rules are hooks | Rules are re-tested on model change; the schedule follows the drift found |
+
+A stage reaches a level only when every statement at that level and below scores yes. Level 1 has no statements, so every stage starts there. A statement scored partly shows in the profile and does not count toward a level. The overall level is the level of the weakest stage, because the lifecycle moves no faster than its slowest stage. The review queue shows why: agents that write code faster upstream only lengthen the queue at the stage that cannot keep up (essay, "From the craft shop to the dynamo").
+
+Each level names the action that follows from it.
+
+| Level | Name | What it looks like | Next action |
+|---|---|---|---|
+| 1 | Ad hoc | Context practice is not yet in place for this stage | Put in the level 2 basics for the weakest stage first: a home, a source and date, a named owner |
+| 2 | Defined | The practice is written down and followed, and nothing stops it being skipped | Turn the practices that get skipped into enforced gates, starting with the gate at the back of the build |
+| 3 | Enforced | The few gates that matter run on every change | Close the loop: feed every setback into the criteria, rules or spec |
+| 4 | Adaptive | The stage changes its own standards from what it learns | Hold the level, prune on schedule, and check the target level against your risk appetite |
+
+The output of the assessment is the list of things to work on, and the level exists to name the next action. Keep the results inside the organisation and do not use them to rank teams. Set the target level for each stage by the risk its work carries. The highest level everywhere is not the goal.
+
+Score each statement yes, partly or no. Every statement names something you can observe: an artefact exists, or a gate runs. Each ID gives the stage and the level, so IN-3a is the first Intake statement at level 3. The codes are IN for Intake, TR for Triage, DX for Discover and experiment, SP for Spec, BV for Build and verify, LE for Learn and PR for Prune.
+
+| ID | Statement |
+|---|---|
+| IN-2a | Every new item of context has a recorded source and date |
+| IN-3a | Items without a source are rejected at entry, and the six fields are filled there |
+| IN-4a | The last learning review that found missing context changed an intake source |
+| TR-2a | Every item has a recorded disposition: discard, park, fast-path fix or discovery |
+| TR-3a | Parked items expire on a date unless re-raised, and open human decisions have a WIP limit |
+| TR-4a | The ranking rule was revised in the last review period on the evidence of outcomes |
+| DX-2a | Each item is recorded as complicated or complex before build starts |
+| DX-3a | Complex work has an experiment record or a thin slice through every integration before features |
+| DX-4a | Experiment results have changed a routing signal or an estate assumption on record |
+| SP-2a | Each spec in flight carries acceptance checks and can be read in a sitting |
+| SP-3a | Acceptance checks are written or approved by a named person and run on every change |
+| SP-4a | Criteria carry a provisional or hardened status, and changes to them are recorded like scope changes |
+| BV-2a | A CI baseline runs on every change, and each merge has a named accountable person |
+| BV-3a | Nothing reaches production except through CI/CD, and review and verification have a WIP limit |
+| BV-3b | A sealed suite run by a fresh agent checks work where independence is required |
+| BV-4a | Review depth is set by risk, and the WIP limit has been adjusted from queue data |
+| LE-2a | Every absorbed setback has a learning review that names its cause |
+| LE-3a | Every learning review names the criteria, rule or spec it changed, or records why none |
+| LE-4a | Lessons from one team have changed a shared standard used by others |
+| PR-2a | Each topic has one home, and supersession is recorded on both items |
+| PR-3a | Pruning runs on a schedule with a named owner; superseded and expired items are not loaded |
+| PR-3b | Rules that allow no exceptions run as hooks, not as instructions |
+| PR-4a | Rules are re-tested on every model change, and the pruning schedule has been adjusted to the drift found |
+
+Plot the result as a profile. The worked example below is invented: an enterprise delivery team with a long-lived technical estate, newly running agents.
+
+![Bar chart of the worked example's profile, an enterprise delivery team with a long-lived technical estate. Intake is at level 2, Triage 2, Discover and experiment 1 with level 2 partly met, Spec 3, Build and verify 2 with level 3 partly met, Learn 2 and Prune 1. A line at level 1 marks the overall level, Ad hoc, set by Discover and experiment and by Prune.](whitepaper-profile.svg)
+
+*Figure 1. Profile of the worked example. Lighter segments are levels partly met; the line marks the overall level.*
+
+Spec is the team's strongest stage, at level 3, and the overall level is still 1. Its next actions are the level 2 basics for its two weakest stages: record each item as complicated or complex before build starts, give each topic one home, and record supersession on both items.
+
+Match real failures against the diagnosis table. Find the pattern whose symptoms you see, and act at the stage it names (essay, "A lifecycle for context").
+
+| Failure pattern | Symptoms | Example | Stage at fault | Action |
+|---|---|---|---|---|
+| Bugs found mid-delivery | Defects surface after merge that the tests passed; setbacks are absorbed and the timeline slips | A delivery team found bugs mid-project that its agents' own tests had passed | Build and verify | Make CI/CD the only route to production, with checks a named person approved; trace each escaped bug to the missing criterion |
+| Late surprises from the estate | Access, environments, data quality or an undocumented interface turn up after features are built | An enterprise integration hit an undocumented interface after features were built on it | Discover and experiment | Probe the where first with a thin slice through every integration; record estate assumptions with evidence and a date |
+| A review queue that piles up | Changes wait days for review; reviewers skim; fatigue at the end of the line | Pull requests outpaced review within weeks of agents arriving | Build and verify | Set a WIP limit on review and verification; keep slices readable in a sitting |
+| Contradictory context | Agents follow one of two conflicting instructions, apparently at random | Two rules files disagreed and agents followed either | Prune | Give each topic one home; record supersession; stop loading superseded items |
+| Criteria written by the agents | Tests always pass; failing tests get deleted or weakened | An agent deleted a failing test instead of fixing the bug | Spec | Have a named person write or approve the acceptance checks; add a sealed suite run by a fresh agent |
+| Stale descriptions | Specs and rules describe a system that has changed | A rules file still described a retired service | Prune | Give every description a review-by date or trigger; prune on schedule |
+| Lessons that never reach the agents | The same setback recurs after a retrospective | A retrospective named the cause and the next sprint repeated it | Learn | Feed each lesson into the criteria, rules or spec, and name the context changed |
+| Context with no provenance | Nobody can say where an item came from or whether it is current | An agent acted on a forwarded email nobody could date | Intake | Admit nothing without a source and date; fill the six fields at entry |
+| An unranked backlog that only grows | Items wait indefinitely; nobody knows what was decided about them | A backlog held items raised years earlier with no disposition | Triage | Record a disposition for every item; let parked items expire unless re-raised |
+| A spec too long to read | Reviewers approve specs they have not read; drift goes unnoticed | A spec ran to more pages than anyone reviewed | Spec | Cut it to a slice readable in a sitting, and bind it to checks that fail on drift |
+
+### Align
+
+Agree the rules the lifecycle runs on. Decide which context is binding and which advisory. The governed part, the business rules, compliance obligations, brand and taste, is where the organisation keeps control of what the model is given, and judgement over it stays with people (essay, "Where the complexity went"). Name an owner for each kind of context, and make each owner one person.
+
+Choose the few shared artefacts that teams will each read their own way, and the fewest enforced gates that hold, starting with CI/CD as the gate for going live (essay, "Where the complexity went").
+
+Set the risk appetite. It fixes where coordination lands between complete control and laissez-faire, and whether the stack is vendor-managed or self-managed, as set out under Choices to make (essay, "From the craft shop to the dynamo").
+
+### Pilot
+
+Run the lifecycle on one value stream. Put every item through the seven stages with its six fields filled, ship each spec with its executable acceptance checks, and set a WIP limit on review and verification (essay, "A lifecycle for context").
+
+Treat the pilot as a probe. It tests the lifecycle against your own estate and people, so expect it to change what you aligned on. Take its results back into Assess and score again before you scale.
+
+### Scale
+
+Spread what the pilot showed works. Standardise the shared artefacts across teams, and promote rules that allow no exceptions from written instructions to enforced hooks (essay, "Where the complexity went"). Give pruning a schedule and a named owner, and let a leader at each level pace it (essay, "The wall at the edge of the firm"). Feed the learning loop into shared standards, so that a lesson one team learns changes what every team's agents do (essay, "A lifecycle for context").
+
+Do not copy a finished form from another organisation. Its stages, records and gates were formed around its own readers and estate, and may suit only it. Reuse the questions and the four steps, and form your own answers (essay, "Where the complexity went").
+
+### Where to start
+
+Where to start depends on whether there is a practice to score.
+
+Brownfield, where delivery already runs and can be assessed: start with the weakest stage in your own profile, and work it to the next level before moving on.
+
+Greenfield, where there is nothing yet to assess: stand the stages up in the fixed order below, in three steps.
+
+1. Get one item from intake to a verified build (Intake, Spec, Build and verify), so that one thin path runs end to end.
+2. Add triage and discovery when volume and unknowns arrive (Triage, Discover and experiment).
+3. Add learn and prune once there is history (Learn, Prune).
+
+| # | Stage | Why at this point |
+|---|---|---|
+| 1 | Intake | The first item enters with a source, a date and an owner; provenance put in from the start costs less than retrofitting it |
+| 2 | Spec | The item becomes a spec readable in a sitting and bound to executable acceptance checks that a named person approved |
+| 3 | Build and verify | The item is built and passes CI/CD, the one enforced gate, with a WIP limit on review; one thin path now runs end to end |
+| 4 | Triage | Once more items arrive than people can decide on, each gets a recorded disposition and parked items expire |
+| 5 | Discover and experiment | As unknowns turn up in the estate and the domain, complex work starts with a probe or a thin slice through every integration |
+| 6 | Learn | Learning reviews need setbacks to trace, so they start with the first absorbed setback and feed the criteria, rules or spec |
+| 7 | Prune | Pruning needs context old enough to supersede or expire, so it comes last, with an owner named from the start |
+
+Use the greenfield order once. After the first pass, score the organisation with the assessment and continue as brownfield, working on the weakest stage each time round (essay, "A lifecycle for context").
+
+The same pattern sits behind every default in this paper. Brownfield derives its position from what it knows about itself: its own profile, its own risk and its own data. Greenfield takes a stated default: this order for the stages, bounded autonomy for coordination, and a vendor-managed stack.
+
 ## References
 
 David, P.A. (1990) "The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox", *American Economic Review*, 80(2), Papers and Proceedings, pp.355–361.
