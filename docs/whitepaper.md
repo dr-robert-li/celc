@@ -81,7 +81,7 @@ Give every item six fields, stored with the item so that agents can filter befor
 | Review-by | A date, or a trigger such as a model change or a pivot |
 | Links | The parent item, what it supersedes or is superseded by, and its evidence |
 
-The essay argues for what each stage does; the arrangement into stages, fields and policies is this paper's own. Run context through seven stages, each with a shared artefact and a policy. Stage 5 holds the one enforced gate for going live. The other stages begin on written policies that teams keep. A stage reaches the Enforced level (see Assess) when its own rules are checked automatically, and none of those checks is a second gate for going live.
+The essay argues for what each stage does; the arrangement into stages, fields and policies is this paper's own. Run context through seven stages, each with a shared artefact and a policy. A bug or small fix takes the shorter path: Triage marks it a fast-path fix, and it passes through the later stages in compressed form. Stage 5 holds the one enforced gate for going live. The other stages begin on written policies that teams keep. A stage reaches the Enforced level (see Assess) when its own rules are checked automatically, and none of those checks is a second gate for going live.
 
 | # | Stage | Shared artefact | Policy |
 |---|---|---|---|
@@ -195,15 +195,15 @@ The lifecycle and the change guidance are two separate things. The lifecycle, se
 
 No finished lifecycle transfers from one organisation to another. What counts as understandable depends on who reads it and why, so a CELC with its stages, records and checks may suit only the organisation that formed it. The process of forming one does transfer, and so do the questions it starts from (essay, "Where the complexity went").
 
-This paper is written during a transition, and its parts will not date equally (essay, "The reorganisation lag"). The parts meant to last are context as the managed unit, the seven stages, the six fields, and the scoring method and four steps set out below. The provisional parts are where the bottleneck sits, the stack choice, the level targets, and specific checks such as sealed suites and WIP limits. They will date as models and tools change, so revisit them at each model change and each quarterly re-score (essay, "Where the complexity went").
+This paper is written during a transition, and its parts will not date equally (essay, "The reorganisation lag"). The parts meant to last are context as the managed unit, the seven stages, the six fields, and the scoring method and four steps set out below. The provisional parts are where the bottleneck sits, the stack choice, the level targets, and specific checks such as sealed suites and WIP limits. They will date as models and tools change, so revisit them at each model change and whenever you re-score (essay, "Where the complexity went").
 
-Form your own in four steps: Assess, Align, Pilot and Scale. The steps are iterative. Each round ends with a fresh assessment, and the lessons of each round go into the next (essay, "Where the complexity went"). Each step is defined by the context artefacts it produces.
+Form your own in four steps: Assess, Align, Pilot and Scale. The steps are iterative, and the lessons of each round go into the next (essay, "Where the complexity went"). Each step is defined by the context artefacts it produces.
 
 | Step | Produces |
 |---|---|
-| Assess | An inventory of where context lives, of which kind and how stale; the location of the bottleneck; a maturity profile; the diagnosis rows that match your own failures |
+| Assess | An inventory of where context lives, of which kind and how stale; the location of the bottleneck; the diagnosis rows that match your own failures; a maturity profile, where you choose to score |
 | Align | A record of which context is binding, and which of the binding context is enforced; a named owner for each kind of context; the few shared artefacts and enforced checks; the risk appetite |
-| Pilot | One value stream run through the seven stages, with the six fields on every item, specs shipped with their checks and a WIP limit on review |
+| Pilot | One small feature taken through all seven stages in their thinnest form; a closing record of what it changed and retired; a map of the part of the estate it touched |
 | Scale | Shared artefacts standardised across teams; hard rules as hooks; a pruning schedule with an owner; lessons feeding shared standards |
 
 ### Assess
@@ -212,7 +212,7 @@ Start with the questions everyone in the work has to answer to get what they nee
 
 Locate the bottleneck. Where agents write the code, expect it in review, oversight and remediation, and check whether it sits there in your own queue by how long changes wait (essay, "Where the complexity went").
 
-Then score each stage. Score one team or value stream at a time; an organisation's result is the set of those profiles, not their average. The scoring has four parts, and each feeds the next.
+Every organisation does that much of Assess. Scoring each stage is an orienting tool, not a required step, and before a lifecycle runs there is nothing to score. Use it when you want to see where to deepen, at a cadence that suits your organisation; quarterly is a suggestion. Score one team or value stream at a time; an organisation's result is the set of those profiles, not their average. The scoring has four parts, and each feeds the next.
 
 1. The maturity matrix describes what each stage looks like at each level. Read it; do not score it.
 2. The checklist turns each cell from Defined to Adaptive into one or two statements you can observe. Score those.
@@ -290,7 +290,7 @@ Spec is the team's strongest stage, at level 3, and the overall level is still 1
 | 1 | Ad hoc | No level 2 statement is fully met for this stage | Put in the stage's level 2 statements |
 | 2 | Defined | The practice is written down and followed, and nothing stops it being skipped | Put in the stage's level 3 statements: turn the practices that get skipped into automatic checks |
 | 3 | Enforced | The stage's rules are checked automatically and cannot be skipped | Put in the stage's level 4 statements: revise the stage's rules from what its outcomes and learning reviews show |
-| 4 | Adaptive | The stage changes its own standards from what it learns | Re-score every quarter and after each model change; lower a stage's target where the risk does not justify the cost |
+| 4 | Adaptive | The stage changes its own standards from what it learns | Keep re-scoring at your own cadence and after each model change; lower a stage's target where the risk does not justify the cost |
 
 Work first on the weakest stage that is still below its target; where stages tie, start with Build and verify, the gate at the back of the build. The worked example's next actions are the level 2 statements for its two weakest stages. Record each item's domain before build starts (DX-2a). Give each topic one home, with supersession recorded on both items (PR-2a).
 
@@ -321,9 +321,23 @@ Set the risk appetite. It fixes where coordination lands between complete contro
 
 ### Pilot
 
-Run the lifecycle on one value stream. Put every item through the seven stages with its six fields filled, ship each spec with its executable acceptance checks, and set a WIP limit on review and verification (essay, "A lifecycle for context").
+The pilot is a thin slice of the lifecycle: one small feature in one value stream, taken through all seven stages in their thinnest form. The thinnest form of a stage is its level 2 statement, applied to that feature alone. A lifecycle built in part does not fail outright, but the context it creates goes unmanaged, unseen and unchecked, so run every stage, however thin.
 
-Treat the pilot as a probe, because changing how an organisation works is complex work in the Cynefin sense. It tests the lifecycle against your own estate and people, so expect it to change what you aligned on. Take its results back into Assess and score again before you scale.
+| Stage | Thinnest form on the first feature | Statement |
+|---|---|---|
+| Intake | The request enters the product's inbox with its source and date | IN-2a |
+| Triage | Its disposition is recorded: discovery | TR-2a |
+| Discover and experiment | Its domain is recorded before build starts | DX-2a |
+| Spec | Its spec carries acceptance checks and can be read in a sitting | SP-2a |
+| Build and verify | CI runs on every change, and a named person answers for each merge | BV-2a |
+| Learn | A closing record says what the feature changed and traces any setback to its cause | LE-2a |
+| Prune | Each topic it touched has one home, and what it retired is marked superseded | PR-2a |
+
+Pick a feature large enough to give every stage real work and small enough to finish. A bug or small fix stays in the lifecycle, on Triage's fast path, but it is too compressed to learn from, so do not pilot on it.
+
+Learn and Prune run on the first feature too. Write its closing record when the feature closes, before later work buries it (essay, "Where the complexity went"). Context is also the map of what exists: without that record an agent is as blind as a new developer, and the same redundancy, inconsistency and bugs recur. Record only the part of the estate the feature touches. The map then grows feature by feature, and nobody baselines the whole product first.
+
+Treat the pilot as a probe, because changing how an organisation works is complex work in the Cynefin sense. Complex work is probed first (essay, "A lifecycle for context"). The pilot tests the lifecycle against your own estate and people, so expect it to change what you aligned on. Take its results back into Assess before you scale.
 
 ### Scale
 
@@ -343,27 +357,17 @@ Reuse the questions and the four steps, and form your own answers.
 
 ### Where to start
 
-Brownfield, where delivery already runs and can be assessed: start with the weakest stage in your own profile that is still below its target, and work it to the next level before moving on.
+The four steps say what to do. How you enter them depends on whether a lifecycle already runs.
 
-Greenfield, where there is nothing yet to assess: stand the stages up in the fixed order below, in three steps.
+Greenfield means no CELC runs yet, whatever the age of the code: an existing product with no managed context is greenfield here. Brownfield means a CELC, or an early form of one, already runs.
 
-1. Get one item from intake to a verified build (Intake, Spec, Build and verify), so that one thin path runs end to end.
-2. Add triage and discovery when volume and unknowns arrive (Triage, Discover and experiment).
-3. Add learn and prune once there is history (Learn, Prune).
+Greenfield: before the first feature, Assess is the inventory and the questions, with nothing scored. Find where context lives, who owns it and where the queue is. Then run the pilot: one small feature through the thin lifecycle.
 
-| # | Stage | Why at this point |
-|---|---|---|
-| 1 | Intake | The first item enters with a source, a date and an owner; provenance put in from the start costs less than retrofitting it |
-| 2 | Spec | The item becomes a spec readable in a sitting and bound to executable acceptance checks that a named person approved |
-| 3 | Build and verify | The item is built and passes CI/CD, the one enforced gate, with a WIP limit on review; one thin path now runs end to end |
-| 4 | Triage | Once more items arrive than people can decide on, each gets a recorded disposition and parked items expire |
-| 5 | Discover and experiment | As unknowns turn up in the estate and the domain, complex work starts with a probe or a thin slice through every integration |
-| 6 | Learn | Learning reviews need setbacks to trace, so they start with the first absorbed setback and feed the criteria, rules or spec |
-| 7 | Prune | Pruning needs context old enough to supersede or expire, so it comes last, with an owner named from the start |
+Then repeat: the next feature goes through the same thin lifecycle. Refine the lifecycle each time, because what it looks like in your organisation is for you to form (essay, "A lifecycle for context").
 
-Use the greenfield order once. After the first pass, score the organisation with the assessment and continue as brownfield, working each time on the weakest stage still below its target (essay, "A lifecycle for context").
+Brownfield: a lifecycle already runs, so deepen it. Score it when you want to see where (see Assess), then work on the weakest stage still below its target, taking it to the next level before moving on. A greenfield start reaches this point once its thin lifecycle runs.
 
-Every default in this paper follows one rule. Brownfield takes its position from what it knows about itself: its profile, its risk and its data. Greenfield takes a stated default: this order for the stages, bounded autonomy for coordination, and a vendor-managed stack.
+Every default in this paper follows one rule. Brownfield takes its position from what it knows about itself: its lifecycle, its risk and its data. Greenfield takes a stated default: the thin lifecycle on one small feature, bounded autonomy for coordination, and a vendor-managed stack.
 
 ## References
 
