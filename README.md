@@ -11,7 +11,7 @@ The project is three documents that make one argument. Each is derived from the 
 | Document | Reader | What it does | Status |
 |---|---|---|---|
 | Essay | General | Argues that software itself is being redefined, and that the SDLC cannot simply be run faster to produce the new thing | Published (v2.0) |
-| Whitepaper | Technology leaders | Turns the essay's argument into a lifecycle model and guidance for adopting it | Signed off, 22 November 2026 |
+| Whitepaper | Technology leaders | Turns the essay's argument into a lifecycle model and guidance for adopting it | Signed off, 23 November 2026 |
 | Operating procedures | Internal | Turn the whitepaper's guidance into day-to-day practice | Not started; will not be published here |
 
 ## Read them
