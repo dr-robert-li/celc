@@ -14,7 +14,7 @@ Agents now write much of the code, and the slow part of delivery has moved to re
 | An agent acts only on what was written down | Record requirements, scope by layer, and write criteria as scope made testable | Requirements, scope and user stories |
 | No single method fits all work | Hold four invariants and route spec depth by domain | Working method |
 | Ceremonies were sized to the cost of building | Ask what each one paid for and what that cost is now | Ceremony |
-| Agents join the work only through what is written for them | Link teams through a few shared artefacts and the fewest enforced gates | Scaling |
+| Agents join the work only through what is written for them | Link teams through a few shared artefacts and the fewest enforced checks | Scaling |
 | Coordination, the stack and freed time are open questions | Settle coordination and the stack by your risk appetite, and freed time by what you value | Choices to make |
 | No finished lifecycle transfers between organisations | Assess, align, pilot and scale, round after round | Implementing a CELC |
 
@@ -47,7 +47,7 @@ The lifecycle balances quality, rework and manual effort, and speed. Speed is wh
 
 Bundle each spec with its executable acceptance checks, and version the two together. A spec stays honest only while someone can read it in a sitting and its checks fail when the code drifts from it (essay, "A lifecycle for context").
 
-Make CI/CD the one enforced gate for going live. It is the gate at the back of the build, where the evidence from running the program is set against the criteria, and the last chance to realign before the work reaches its users. Keep every other gate advisory unless it has to be enforced, so that enforced gates stay the fewest that hold (essay, "Where the complexity went"). The checks run the program against its criteria: at scale, under load, while failing, under attack, within budget, and with an experience its users will accept. Passing gives demonstration and evidence of what the program did on the runs made, which falls short of proof (essay, "A lifecycle for context").
+Make CI/CD the one enforced gate for going live. It is the gate at the back of the build, where the evidence from running the program is set against the criteria, and the last chance to realign before the work reaches its users. Keep every other check advisory unless it has to be enforced, so that enforced checks stay the fewest that hold (essay, "Where the complexity went"). The gate's checks run the program against its criteria: at scale, under load, while failing, under attack, within budget, and with an experience its users will accept. Passing gives demonstration and evidence of what the program did on the runs made, which falls short of proof (essay, "A lifecycle for context").
 
 Graduate who decides at that gate by the scale and risk of the deployment. How tight the review is at the gate follows the organisation's risk tolerance and the scope of the release. A minor patch that does not touch functional parts of the code base can take a loose review. The table is one example of graduated release governance. Each organisation sets where its own lines fall, in its standard operating procedures (SOPs).
 
@@ -74,7 +74,7 @@ Give every item six fields, stored with the item so that agents can filter befor
 
 | Field | Holds |
 |---|---|
-| Kind | Intent, decision, spec, assumption, bug, feedback, experiment, learning, memory, rule, reference or estate |
+| Type | Intent, decision, spec, assumption, bug, feedback, experiment, learning, memory, rule, reference or estate. Each type falls under one of the three kinds above |
 | Status | Proposed, accepted, validated, invalidated, superseded or expired |
 | Owner | One named person; a team is not an owner |
 | Authority | Binding and enforced by a check, binding by policy only, or historical |
@@ -97,7 +97,7 @@ Prevent contradiction by structure, because review will not reliably catch it. T
 
 ## Requirements, scope and user stories
 
-Gathering context has always been the first gate, whatever a method called it. An engineer who missed something there could recover it in the corridor. An agent acts on what it was given. Capture context in a structured way that people, records and agents can all draw on (essay, "Where the complexity went").
+Gathering context has always been the first check on what gets built, whatever a method called it. An engineer who missed something there could recover it in the corridor. An agent acts on what it was given. Capture context in a structured way that people, records and agents can all draw on (essay, "Where the complexity went").
 
 | Artefact | Must contain now |
 |---|---|
@@ -151,13 +151,13 @@ Put every ceremony through the purpose test. A ceremony is a payment against a c
 
 ## Scaling
 
-Scale through a few shared artefacts that each team reads its own way, and the fewest enforced gates that hold. A spec is the plainest case: the product owner reads intent in it, the engineer constraints, the auditor evidence and the agent instructions. A spec structured for every reader at once serves none of them well (essay, "Where the complexity went").
+Scale through a few shared artefacts that each team reads its own way, and the fewest enforced checks that hold. A spec is the plainest case: the product owner reads intent in it, the engineer constraints, the auditor evidence and the agent instructions. A spec structured for every reader at once serves none of them well (essay, "Where the complexity went").
 
 When each pair of teams builds its own handover documents and channels, the links between them grow as n(n−1)/2, so ten teams need 45. Shared artefacts replace those pairwise links, and the links then grow roughly in step with the number of teams (essay, "Where the complexity went"). Team structures already do this for people, since they let most people avoid talking to most others (essay, "Every method is an opinion about complexity").
 
 With agents, the arithmetic changes: an agent joins the work only through what has been written down for it, so the size of the working network no longer follows the size of the organisation. As an illustration, five people running twenty agents make a network of twenty-five participants. Small teams used to stay informal because everyone could talk to everyone. Once agents are in the team, that informality stops working for them. A small team then needs written, shared context as much as a large one (essay, "A lifecycle for context").
 
-Keep a uniform core and let the edges vary. Shared standards, artefacts and gates sit in the core, and local practice sits at the edges. A leader at each level decides where a unit sits between the two, how fast its complexity may grow and how it is pruned. Widening the core by loading more into it fails, because models do not use long inputs evenly (essay, "The wall at the edge of the firm").
+Keep a uniform core and let the edges vary. Shared standards, artefacts and checks sit in the core, and local practice sits at the edges. A leader at each level decides where a unit sits between the two, how fast its complexity may grow and how it is pruned. Widening the core by loading more into it fails, because models do not use long inputs evenly (essay, "The wall at the edge of the firm").
 
 ## Choices to make
 
@@ -172,7 +172,7 @@ Approaches to coordinating agents run between two ends (essay, "From the craft s
 
 The experimental evidence covers both ends. In Kim and Liu's experiments, agents working in parallel without communicating amplified errors "by up to 17.2x", and a central orchestrator "contained this amplification to just 4.4x". On tasks that had to be done in order, "every multi-agent variant we tested degraded performance by 39-70%" (Kim and Liu, 2026).
 
-I set the landing by the risk the work carries, whether or not the work is exploratory. My worked example, and the default I recommend for a greenfield start, is bounded autonomy. Agents work freely inside a unit of work, and control sits at its edges: the context that goes in, and the checks the output must pass on the way out. At the edges I put criteria a named person approved, a sealed suite where independence is needed, and a WIP limit on what waits for human judgement. Higher-risk work gets tighter edges, meaning more control over the context going in and the checks on the way out, and lower-risk work looser ones.
+I set the landing by the risk the work carries, whether or not the work is exploratory. My worked example, and the default I recommend for a greenfield start, is bounded autonomy. Agents work freely inside a unit of work, and control sits at its edges: the context that goes in, and the checks the output must pass on the way out. At the edges I put criteria a named person approved, a sealed suite where independence is needed, and a WIP limit on what waits for human judgement. Higher-risk work gets tighter edges and lower-risk work looser ones.
 
 On higher-risk work, tighter can mean a sealed suite on every change, a lower limit on work waiting for review, and acceptance criteria written by a named person instead of approved by one. Risk tolerance is a sliding scale with no break points that hold for every organisation, so each sets its own tiers in its SOPs and the edges tighten from tier to tier.
 
@@ -193,14 +193,16 @@ The third choice is what freed time is for. Decide it explicitly, before a defau
 
 The lifecycle and the change guidance are two separate things. The lifecycle, set out above, is what manages context; the change guidance, set out below, is how an organisation gets to running it. This part answers the question the essay ends on: what an organisation has to change, and in what order, to rebuild how it works around context (essay, "The reorganisation lag").
 
-No finished lifecycle transfers from one organisation to another. What counts as understandable depends on who reads it and why, so a CELC with its stages, records and gates may suit only the organisation that formed it. The process of forming one does transfer, and so do the questions it starts from (essay, "Where the complexity went").
+No finished lifecycle transfers from one organisation to another. What counts as understandable depends on who reads it and why, so a CELC with its stages, records and checks may suit only the organisation that formed it. The process of forming one does transfer, and so do the questions it starts from (essay, "Where the complexity went").
+
+This paper is written during a transition, and its parts will not date equally (essay, "The reorganisation lag"). The parts meant to last are context as the managed unit, the seven stages, the six fields, and the scoring method and four steps set out below. The provisional parts are where the bottleneck sits, the stack choice, the level targets, and specific checks such as sealed suites and WIP limits. They will date as models and tools change, so revisit them at each model change and each quarterly re-score (essay, "Where the complexity went").
 
 Form your own in four steps: Assess, Align, Pilot and Scale. The steps are iterative. Each round ends with a fresh assessment, and the lessons of each round go into the next (essay, "Where the complexity went"). Each step is defined by the context artefacts it produces.
 
 | Step | Produces |
 |---|---|
 | Assess | An inventory of where context lives, of which kind and how stale; the location of the bottleneck; a maturity profile; the diagnosis rows that match your own failures |
-| Align | A record of which context is binding, and which of the binding context is enforced; a named owner for each kind; the few shared artefacts and enforced gates; the risk appetite |
+| Align | A record of which context is binding, and which of the binding context is enforced; a named owner for each kind of context; the few shared artefacts and enforced checks; the risk appetite |
 | Pilot | One value stream run through the seven stages, with the six fields on every item, specs shipped with their checks and a WIP limit on review |
 | Scale | Shared artefacts standardised across teams; hard rules as hooks; a pruning schedule with an owner; lessons feeding shared standards |
 
@@ -311,9 +313,9 @@ Match real failures against the diagnosis table. Find the pattern whose symptoms
 
 ### Align
 
-Agree the rules the lifecycle runs on. Decide which context is binding, and which of the binding context is enforced. The governed part, the business rules, compliance obligations, brand and taste, is where the organisation keeps control of what the model is given, and judgement over it stays with people (essay, "Where the complexity went"). Name an owner for each kind of context, and make each owner one person.
+Agree the rules the lifecycle runs on. Decide which context is binding, and which of the binding context is enforced. The governed part, the business rules, compliance obligations, brand and taste, is where the organisation keeps control of what the model is given, and judgement over it stays with people (essay, "Where the complexity went"). Name an owner for each kind of context, records, descriptions and transients, and make each owner one person; each item still carries its own owner.
 
-Choose the shared artefacts and the few enforced gates described under Scaling, starting with CI/CD as the gate for going live (essay, "Where the complexity went").
+Choose the shared artefacts and the few enforced checks described under Scaling, starting with CI/CD, the one gate for going live (essay, "Where the complexity went").
 
 Set the risk appetite. It fixes where coordination lands between complete control and laissez-faire, where the release lines fall, and whether the stack is vendor-managed or self-managed (essay, "From the craft shop to the dynamo").
 
@@ -326,6 +328,16 @@ Treat the pilot as a probe, because changing how an organisation works is comple
 ### Scale
 
 Spread what the pilot showed works. Standardise the shared artefacts across teams, and promote rules that allow no exceptions from written instructions to enforced hooks (essay, "Where the complexity went"). Give pruning a schedule and a named owner, and let a leader at each level pace it (essay, "The wall at the edge of the firm"). Feed the learning loop into shared standards, so that a lesson one team learns changes what every team's agents do (essay, "A lifecycle for context").
+
+A rollout can stall on the organisation itself, and the table answers each common blocker with guidance already given in this paper.
+
+| Blocker | What it looks like | Response |
+|---|---|---|
+| Roles move from writing to review | People resist the change, or are left with no clear role | Decide what freed time is for, and do not default to cost-cutting: put it first into reviewing and understanding more of what is built (essay, "From the craft shop to the dynamo") |
+| Output is rewarded over verification | What ships is praised while the review queue grows and reviewers skim | Favour quality where it conflicts with speed (essay, "From the craft shop to the dynamo"). Hold the WIP limit on review, so nothing new starts until something waiting has been judged |
+| Teams score themselves generously | Levels rise with no new artefact or check to show for it | Score only what can be observed: an artefact exists, or a check runs. Keep the results inside the organisation and do not use them to rank teams (see Assess) |
+| Ownership in name only | A team is listed as owner, or the named person cannot explain a failure | Make each owner one named person, not a team. For each change, name someone who can follow a failure into the code and find its cause (essay, "A lifecycle for context") |
+| A pilot works and does not spread | Other teams keep their own artefacts, and the pilot's lessons stay with its team | Standardise the shared artefacts and feed each lesson into shared standards. A leader at each level decides where each unit sits between the shared core and local practice (essay, "The wall at the edge of the firm") |
 
 Reuse the questions and the four steps, and form your own answers.
 
